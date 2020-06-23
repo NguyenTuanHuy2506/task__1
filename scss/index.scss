@@ -1,0 +1,368 @@
+$lightBlue: #1880b6;
+$lightGreen: #258f6b;
+$lightPurple: #3e4279;
+$lightBrown: #98713c;
+
+@mixin setView($w, $h){
+	width: $w;
+	height: $h;
+}
+.transform-middle{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.transform-center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.font--small{
+	font-size: .8rem;
+}
+.font--big{
+	font-size: 2.2rem;
+}
+.fit--img-cover,.fit--img-contain{
+	width: 100%;
+	height: 100%;
+}
+.fit--img-cover{
+	object-fit: cover;
+}
+.fit--img-contain{
+	object-fit: contain;
+}
+.text--oline{
+	display: block;
+}
+.c--light-blue{
+	color: $lightBlue;
+}
+.bg--light-blue{
+	background-color: $lightBlue;
+}
+.bg--light-green{
+	background-color: $lightGreen;
+}
+.bg--light-purple{
+	background-color: $lightPurple;
+}
+.bg--light-brown{
+	background-color: $lightBrown;
+}
+.bg--add-img{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.btn-outline--white{
+	border: .2rem solid white !important;
+}
+.head-menu{
+	width: 100%;
+}
+.menu{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	padding: .5rem 2.5rem;
+	&--logo{
+		margin-right: auto;
+		font-weight: 700;
+		font-size: 2rem;
+	}
+	&__search{
+
+		&--form{
+			outline: none;
+			border: none;
+			border-radius: 1rem;
+			padding: .2rem .8rem;
+			background-color: #e9e9e9;
+		}
+	}
+	&__search::before{
+		content: '\f002';
+		font-family: FontAwesome;
+		margin-right: .2rem;
+	}
+	&__lang{
+		padding: 0 1rem;
+	}
+	&--btn{
+		width:1.8rem;
+		height:1.8rem;
+		span, span::before, span::after{
+			width: 100%;
+			height: .3rem;
+			border-radius: .2rem;
+			background-color: black;
+			transition: all .3s ease;
+			display: inline-block;
+			position: relative;
+		}
+		span{
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		span::before, span::after{
+			content: '';
+		}
+		span:before{
+			top:-.7rem;
+		}
+		span:after{
+			top:.4rem;
+		}
+	}
+	&--btn:hover{
+		cursor: pointer;
+		span{
+			transform: rotate(-45deg);
+		}
+		span::before{
+			opacity: 0;
+		}
+		span::after{
+			transform: rotate(-90deg);
+			top: -.3rem;
+		}
+		
+	}
+}
+.slide{
+	width:100%;
+	height: 70vh;
+	position: relative;
+	&--notice{
+		position: absolute;
+		top:0;
+		left: 0;
+		width:100%;
+		min-height: 5rem; 
+		background-color: rgba(#388d70, .8);
+	}
+	&--btn-left,&--btn-right{
+		font-size: 3rem;
+		position: absolute;
+		top: 50%;
+		color: white;
+		padding: 0 .8rem;
+		transform: translateY(-50%);
+	}
+	&--btn-left{
+		left: 1.5rem;
+	}
+	&--btn-right{
+		right: 1.5rem;
+	}
+	&--item{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		.slide--img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: brightness(.5);
+		}
+		.slide--content{
+			width:50%;
+			@extend .transform-center;
+			text-align: center;
+			color: white;
+		}
+	}
+	&--footer{
+		width: 100%;
+		height: 6rem;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+.heading{
+	font-size: 3rem;
+	font-weight: 700;
+}
+.notice{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	padding: .5rem 2.5rem;
+	z-index: 101;
+	&--content{
+		margin-right: auto;
+	}
+	&--time{
+		margin-right: 1.2rem;
+	}
+	&--content, &--time{
+		font-size: 1rem;
+		color:white;
+		font-weight: 600;
+	}
+}
+
+.btn--custom{
+	min-width: 6.8rem;
+	border: none;
+	border-radius: 1rem;
+	padding: .2rem .5rem;
+	font-size: .8rem;
+	font-weight: 600;
+}
+
+.feature{
+	display: flex;
+	flex-direction: row;
+	&--item{
+		width:100%;
+		height:100%;
+		position: relative;
+		.feature-text{
+			position: absolute;
+			color: white;
+			font-weight: 700;
+			bottom:1rem;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	&--small{
+		width:20%;
+	}
+	&--big{
+		width:40%;
+	}
+}
+
+.feature-logo{
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	.feature-icon{
+		font-size: 1.2rem;
+		font-weight: 700;	
+	}
+	.feature-icon--img{
+		width: 100%;
+		height: 100%;
+		object-fit: none;
+	}
+}
+
+.advantage{
+	height: 70vh;
+	width:100%;
+	position: relative;
+	margin: 1rem 0;
+	&__bg{
+		width: 100%;
+		padding: 3rem;
+		text-align: center;
+		img{
+			@include setView(80%, 80%);
+		}
+	}
+	&__container{
+		width: 100%;
+		top: 0;
+		left: 50%;
+		padding: 1rem;
+		transform: translateX(-50%);
+		position: absolute;
+		text-align: center;
+	}
+	&--content{
+		width: 60%;
+		margin: 3rem auto;
+	}
+}
+.comment{
+	@include setView(70%, 100%);
+	margin: 2rem auto;
+	display: flex;
+	justify-content: space-between;
+	&--item{
+		width: 20%;
+		min-height: 16rem;
+		margin: 1rem;
+		padding: 1rem;
+		border: .1rem solid $lightBlue;
+		background-color: white;
+		position: relative;
+		.comment--title, .comment--value, .comment--description{
+			display: block;
+		}
+		.comment--title{
+			font-size: 1.2rem;
+			font-weight: 700;
+			color: $lightBlue;
+		}
+		.comment--value{
+			font-weight: 700;
+			color: $lightBlue;
+			margin-bottom: 1rem;
+		}
+		.comment--description{
+			font-size: .8rem;
+		}
+	}
+	&--item::after{
+		content: '';
+	    position: absolute;
+		bottom: -1.12rem;
+		left: 4rem;
+		width: 2rem;
+		height: 2rem;
+		transform: skew(10deg, 45deg);
+		border-right: .2rem solid $lightBlue;
+		border-bottom: .2rem solid $lightBlue;
+		background: linear-gradient(to top left, white, white, transparent);
+	}
+}
+.btn--rectangle{
+	border: none;
+	background-color: $lightBlue;
+	padding: .8rem;
+	margin: 1rem;
+	color: white;
+	font-weight: 700;
+}
+.icon--in-end{
+	margin-left: 4rem;
+	font-size: 2rem;
+	font-weight: 700;
+	color: white;
+}
+.grid--box{
+	@include setView(100%, 50vh);
+}
+.grid--container{
+	@include setView(80%, 100%);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	.grid--left, .grid--right{
+		width: 50%;
+		padding: 4rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+}
+@media only screen and (max-width: 768px) {
+
+	
+}
