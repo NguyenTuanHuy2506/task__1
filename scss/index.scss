@@ -120,6 +120,11 @@ $lightGray: #b4b4b4;
 	}
 	&__lang{
 		padding: 0 1rem;
+		.a--lang:hover{
+			cursor: pointer;
+			text-decoration: none;
+			text-shadow: 0 6px 6px black;
+		}
 	}
 	&--btn{
 		width:1.8rem;
@@ -192,13 +197,17 @@ $lightGray: #b4b4b4;
 		}
 	}
 	.menu-item__text{
-		color: white;
+		color: white !important;
 		font-size: 18px;
 		display: block;
 		text-align: center;
 		margin-top: 14px;
 		margin-bottom: 2rem;
 		font-weight: 600;
+	}
+	.menu-item__text:hover{
+		text-decoration: none;
+		color: rgba(white, .7) !important;
 	}
 	.menu--link{
 		display: block;
@@ -207,7 +216,15 @@ $lightGray: #b4b4b4;
 		padding: 1rem 0 1rem .5rem;
 		border-top: .05rem solid rgba(white, .5);
 		border-bottom: .05rem solid rgba(white, .5);
+		transition: all .2s ease;
 	}
+	.menu--link:hover{
+		background:rgba(white, .5);
+	}
+}
+
+.menu-item__logo:hover, .feature-logo:hover{
+	box-shadow: 0 0 20px 2px white;
 }
 .menu-list{
 	display: flex;
@@ -221,6 +238,12 @@ $lightGray: #b4b4b4;
 	padding: .5rem;
 	font-size: .8rem;
 	background-color: white; 
+	transition: all .2s ease;
+}
+.btn-menu-link:hover{
+	cursor: pointer;
+	bottom: 4px;
+	box-shadow: 0 0 10px 0 rgba(white, .5);
 }
 .slide--container{
 	width:100%;
@@ -241,6 +264,10 @@ $lightGray: #b4b4b4;
 		margin: 10px;
 		position: relative;
 		background-color: $lightGray;
+		display: none;
+	}
+	&-item.active{
+		display: block;
 	}
 }
 .slide{
@@ -341,6 +368,11 @@ $lightGray: #b4b4b4;
 			bottom:1rem;
 			left: 50%;
 			transform: translateX(-50%);
+			transition: all .3s ease;
+		}
+		.feature-text:hover{
+			cursor: pointer;
+			color: rgba(black, .8);
 		}
 	}
 	&--small{
@@ -411,7 +443,7 @@ $lightGray: #b4b4b4;
 		border: .1rem solid $lightBlue;
 		background-color: white;
 		position: relative;
-		
+		display: block;
 	}
 	&--item::after{
 		content: '';
@@ -548,11 +580,24 @@ $lightGray: #b4b4b4;
 	@include setView(100%, 1rem);
 	background-color: #00a5f0;
 }
+@media only screen and (max-width: 1024px) {
+	.comment{
+		width: 100%;
+		&--item{
+			display: none;
+		}
+	}
+}
 
 @media only screen and (max-width: 768px) {
-
-	
+	.comment{
+		width: 100%;
+		&--item{
+			display: none;
+		}
+	}
 }
+
 @media only screen and (min-width: 1200px){
 	.container {
 	    max-width: 1180px;

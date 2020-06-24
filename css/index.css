@@ -134,6 +134,11 @@
 .menu__lang {
   padding: 0 1rem;
 }
+.menu__lang .a--lang:hover {
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: 0 6px 6px black;
+}
 .menu--btn {
   width: 1.8rem;
   height: 1.8rem;
@@ -207,13 +212,17 @@
   object-fit: none;
 }
 .menu-item .menu-item__text {
-  color: white;
+  color: white !important;
   font-size: 18px;
   display: block;
   text-align: center;
   margin-top: 14px;
   margin-bottom: 2rem;
   font-weight: 600;
+}
+.menu-item .menu-item__text:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 .menu-item .menu--link {
   display: block;
@@ -222,6 +231,14 @@
   padding: 1rem 0 1rem 0.5rem;
   border-top: 0.05rem solid rgba(255, 255, 255, 0.5);
   border-bottom: 0.05rem solid rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease;
+}
+.menu-item .menu--link:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.menu-item__logo:hover, .feature-logo:hover {
+  box-shadow: 0 0 20px 2px white;
 }
 
 .menu-list {
@@ -238,6 +255,13 @@
   padding: 0.5rem;
   font-size: 0.8rem;
   background-color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-menu-link:hover {
+  cursor: pointer;
+  bottom: 4px;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
 }
 
 .slide--container {
@@ -260,6 +284,10 @@
   margin: 10px;
   position: relative;
   background-color: #b4b4b4;
+  display: none;
+}
+.slide--logo-item.active {
+  display: block;
 }
 
 .slide {
@@ -364,6 +392,11 @@
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+.feature--item .feature-text:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
 }
 .feature--small {
   width: 20%;
@@ -436,6 +469,7 @@
   border: 0.1rem solid #1880b6;
   background-color: white;
   position: relative;
+  display: block;
 }
 .comment--item::after {
   content: "";
@@ -591,6 +625,22 @@
   background-color: #00a5f0;
 }
 
+@media only screen and (max-width: 1024px) {
+  .comment {
+    width: 100%;
+  }
+  .comment--item {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .comment {
+    width: 100%;
+  }
+  .comment--item {
+    display: none;
+  }
+}
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1180px;
