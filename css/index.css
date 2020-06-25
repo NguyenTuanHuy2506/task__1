@@ -1,4 +1,12 @@
 @charset "UTF-8";
+#top {
+  border: 20px solid #ddecf4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .z-index--1 {
   z-index: 1;
 }
@@ -192,6 +200,10 @@
   transition: all 0.4s ease;
 }
 
+.sub-menu-container {
+  height: 100%;
+}
+
 .menu-item {
   width: 25%;
   height: 100%;
@@ -241,10 +253,9 @@
   box-shadow: 0 0 20px 2px white;
 }
 
-.menu-list {
+.menu-list, .menu-list-area {
   display: flex;
   flex-direction: row;
-  height: 80%;
 }
 
 .btn-menu-link {
@@ -258,14 +269,15 @@
   transition: all 0.2s ease;
 }
 
-.btn-menu-link:hover {
+.btn-menu-link:hover, .btn--rectangle:hover {
   cursor: pointer;
-  bottom: 4px;
+  transform: translateY(-6px);
   box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
 }
 
 .slide--container {
   width: 100%;
+  overflow: hidden;
 }
 
 .slide--logo {
@@ -284,10 +296,6 @@
   margin: 10px;
   position: relative;
   background-color: #b4b4b4;
-  display: none;
-}
-.slide--logo-item.active {
-  display: block;
 }
 
 .slide {
@@ -319,6 +327,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  display: none;
 }
 .slide--item .slide--img {
   width: 100%;
@@ -330,6 +339,9 @@
   width: 50%;
   text-align: center;
   color: white;
+}
+.slide--item.active {
+  display: block;
 }
 .slide--footer {
   position: absolute;
@@ -426,10 +438,11 @@
 }
 
 .advantage {
-  height: 70vh;
+  min-height: 70vh;
   width: 100%;
   position: relative;
   margin: 1rem 0;
+  overflow: hidden;
 }
 .advantage__bg {
   width: 100%;
@@ -511,6 +524,7 @@
   margin: 1rem;
   color: white;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .icon--in-end {
@@ -557,6 +571,13 @@
   border-radius: 50%;
   background-color: white;
   box-shadow: 0 0 4rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.text-hidden-50 {
+  white-space: nowrap;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .circle-program::after, .circle-program::before {
@@ -625,25 +646,153 @@
   background-color: #00a5f0;
 }
 
+.grid-area, .total-solution, .footer-area, .client-area {
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 1024px) {
   .comment {
     width: 100%;
   }
-  .comment--item {
-    display: none;
+  .menu-item.collapse {
+    display: block;
+  }
+
+  .menu-list {
+    height: 160px;
+  }
+
+  .menu-list-area {
+    height: 50%;
   }
 }
 @media only screen and (max-width: 768px) {
-  .comment {
-    width: 100%;
+  .container {
+    max-width: 1180px;
   }
-  .comment--item {
+
+  .advantage {
+    height: auto;
+  }
+  .advantage__bg {
     display: none;
   }
+  .advantage__container {
+    transform: none;
+    position: relative;
+    left: 0;
+  }
+
+  .comment {
+    height: auto;
+    flex-direction: column;
+  }
+  .comment--item {
+    width: 100%;
+    margin: 25px 0;
+    min-height: 10rem;
+  }
+
+  .grid--container .grid--right, .grid--container .grid--left {
+    padding: 10px;
+  }
+
+  .total-solution {
+    padding: 15px 0;
+  }
+  .total-solution .grid--box {
+    height: auto;
+  }
+
+  .solution {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+  .solution .grid--left, .solution .grid--right {
+    text-align: center;
+    width: 100%;
+  }
+
+  .fit--img-cover {
+    object-fit: contain;
+  }
+
+  #top {
+    border: none;
+  }
+
+  .heading {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  .menu-list-area {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 70%;
+    height: 70%;
+  }
+  .menu-list-area .menu-item {
+    display: none;
+  }
+  .menu-list-area .menu-item.show {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-list {
+    flex-direction: column;
+  }
+  .menu-list .menu-item {
+    opacity: 0.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .menu-list .menu-item.active {
+    opacity: 1;
+  }
 }
+.to-top {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #07a5ae;
+  position: fixed;
+  text-align: center;
+  font-size: 40px;
+  color: white !important;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.to-top:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px 2px black;
+}
+
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1180px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .menu-item.collapse {
+    display: block;
+  }
+
+  .menu-list-area {
+    height: 50%;
   }
 }
 

@@ -4,6 +4,12 @@ $lightPurple: #3e4279;
 $lightBrown: #98713c;
 $lightWhite: #ddecf4;
 $lightGray: #b4b4b4;
+#top{
+	border: 20px solid #ddecf4;
+}
+html {
+  scroll-behavior: smooth;
+}
 @mixin setView($w, $h){
 	width: $w;
 	height: $h;
@@ -179,6 +185,12 @@ $lightGray: #b4b4b4;
 	margin-top: 4rem;
 	transition: all .4s ease;
 }
+.sub-menu{
+	&-container{
+		height: 100%;
+	}
+}
+
 .menu-item{
 	@include setView(25%, 100%);
 	margin: 1rem;
@@ -226,10 +238,9 @@ $lightGray: #b4b4b4;
 .menu-item__logo:hover, .feature-logo:hover{
 	box-shadow: 0 0 20px 2px white;
 }
-.menu-list{
+.menu-list,.menu-list-area{
 	display: flex;
 	flex-direction: row;
-	height: 80%;
 }
 .btn-menu-link{
 	@include setView(100%, auto);
@@ -240,13 +251,14 @@ $lightGray: #b4b4b4;
 	background-color: white; 
 	transition: all .2s ease;
 }
-.btn-menu-link:hover{
+.btn-menu-link:hover, .btn--rectangle:hover{
 	cursor: pointer;
-	bottom: 4px;
+	transform: translateY(-6px);
 	box-shadow: 0 0 10px 0 rgba(white, .5);
 }
 .slide--container{
 	width:100%;
+	overflow: hidden;
 }
 .slide--logo{
 	position: relative;
@@ -264,10 +276,6 @@ $lightGray: #b4b4b4;
 		margin: 10px;
 		position: relative;
 		background-color: $lightGray;
-		display: none;
-	}
-	&-item.active{
-		display: block;
 	}
 }
 .slide{
@@ -298,6 +306,7 @@ $lightGray: #b4b4b4;
 		width: 100%;
 		height: 100%;
 		position: relative;
+		display: none;
 		.slide--img{
 			width: 100%;
 			height: 100%;
@@ -310,6 +319,9 @@ $lightGray: #b4b4b4;
 			text-align: center;
 			color: white;
 		}
+	}
+	&--item.active{
+		display: block;
 	}
 	&--footer{
 		position: absolute;
@@ -404,10 +416,11 @@ $lightGray: #b4b4b4;
 }
 
 .advantage{
-	height: 70vh;
+	min-height: 70vh;
 	width:100%;
 	position: relative;
 	margin: 1rem 0;
+	overflow: hidden;
 	&__bg{
 		width: 100%;
 		padding: 3rem;
@@ -481,7 +494,9 @@ $lightGray: #b4b4b4;
 	margin: 1rem;
 	color: white;
 	font-weight: 600;
+	transition: all .3s ease;
 }
+
 .icon--in-end{
 	margin-left: 4rem;
 	font-size: 2rem;
@@ -522,6 +537,12 @@ $lightGray: #b4b4b4;
 		background-color: white;
 		box-shadow: 0 0 4rem 1rem rgba(black, .7);
 	}
+}
+.text-hidden-50{
+	white-space: nowrap; 
+  	width: 50%; 
+  	overflow: hidden;
+  	text-overflow: ellipsis;
 }
 .circle-program::after, .circle-program::before{
 	content: '';
@@ -580,26 +601,141 @@ $lightGray: #b4b4b4;
 	@include setView(100%, 1rem);
 	background-color: #00a5f0;
 }
+.grid-area, .total-solution, .footer-area, .client-area{
+	overflow: hidden;
+}
 @media only screen and (max-width: 1024px) {
 	.comment{
 		width: 100%;
+		//flex-wrap: wrap;
 		&--item{
-			display: none;
+		 	
 		}
+	}
+	.menu-item.collapse{
+	 	display: block;
+	}
+	.menu-list{
+		height: 160px;
+	}
+	.menu-list-area{
+		height: 50%;
 	}
 }
 
 @media only screen and (max-width: 768px) {
-	.comment{
-		width: 100%;
-		&--item{
+	.container {
+	    max-width: 1180px;
+	}
+	.advantage{
+		height: auto;
+		&__bg{
 			display: none;
+		}
+		&__container{
+			transform: none;
+			position: relative;
+			left: 0;
+		}
+	}
+	.comment{
+		height: auto;
+		flex-direction: column;
+		&--item{
+			width: 100%;
+			margin: 25px 0;
+			min-height: 10rem;
+		}
+	}
+	.grid--container{
+		.grid--right, .grid--left{
+			padding: 10px;
+		}
+	}
+	.total-solution{
+		padding: 15px 0;
+		.grid--box{
+			height: auto;
+		}
+	}
+	.solution{
+		flex-direction: column;
+		height: auto;
+		padding: 15px;
+		.grid--left, .grid--right{
+			text-align: center;
+			width: 100%;
+		}
+	}
+	.fit--img-cover{
+		object-fit: contain;
+	}
+	#top{
+		border: none;
+	}
+	.heading{
+		font-size: 35px;
+	}
+	h2{
+		font-size: 25px;
+	}
+	span{
+		font-size: 14px;
+	}
+	.menu-list-area{
+		position: absolute;
+		top: 120px;
+		right: 0;
+		width: 70%;
+		height: 70%;
+		.menu-item{
+			display: none;
+		}
+		.menu-item.show{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.menu-list{
+		flex-direction: column;
+		.menu-item{
+		opacity: .5;
+		border-bottom: 1px solid rgba(white, .5);
+		}
+		.menu-item.active{
+		opacity: 1;
 		}
 	}
 }
-
+.to-top{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #07a5ae;
+	position: fixed;
+	text-align: center;
+	font-size: 40px;
+	color: white !important;
+	bottom: 40px;
+	right:40px;
+	display: none;
+	transition: all .5s ease;
+}
+.to-top:hover{
+	cursor: pointer;
+	box-shadow: 0 0 20px 2px black;
+}
 @media only screen and (min-width: 1200px){
 	.container {
 	    max-width: 1180px;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.menu-item.collapse{
+		display: block;
+	}
+	.menu-list-area{
+		height: 50%;
 	}
 }
