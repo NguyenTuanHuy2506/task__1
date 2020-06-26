@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -7,21 +8,24 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<!-- <link rel="stylesheet" href="css/odometer-theme-default.css"> -->
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body id="top">
 	<header>
-		<div class="head-menu menu width--100 bg-light">
-			<span class="menu--logo">Logo</span>
+		<div class="head-menu menu bg-light">
+			<h1 class="menu--logo">LOGO</h1>
 			<div class="menu__search">
 				<input type="text" class="menu__search--form">
 			</div>
 			<div class="menu__lang">
-				<a class="a--lang" style="color: #1880b6">JP</a> |
-				<a class="a--lang" style="color: #1f1f1f">VN</a>
+				<a style="color: #1880b6">JP</a> |
+				<a style="color: #1f1f1f">VN</a>
 			</div>
 			<div class="menu--btn">
-				<span></span>
+				<div class="menu--btn__ber"></div>
 			</div>
 			<div class="sub-menu sub-menu--header animated">
 				<div class="container-fluid sub-menu-title">
@@ -194,13 +198,13 @@
 				<button class="btn--custom">お見積り</button>
 			</div>
 			<div class="sliding">	
-				<div class="slide--item animated active">
+				<div class="slide--item animated">
 					<img class="slide--img" src="img/slider/bg_slider_global.jpg" alt="slider background 1">
 					<div class="slide--content">
-						<h2>TRANSLATION</h2>
+						<h1 class="font-oswald">TRANSLATION</h1>
 						<span class="heading d-block mb-5">翻訳・通訳サービス</span>
-						<span class="d-block font-weight-bold my-2">対応可能言語は00ケ国、英語以外の言語もお任せください。</span>
-						<span class="d-block font-weight-bold my-2">高品質な翻訳をスピーディーに提供致します。</span>
+						<span class="d-block sub-heading">対応可能言語は00ケ国、英語以外の言語もお任せください。</span>
+						<span class="d-block sub-heading">高品質な翻訳をスピーディーに提供致します。</span>
 					</div>
 				</div>
 				<div class="slide--item animated">
@@ -211,15 +215,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="slide--btn-left text-white">
-				<i class="fa fa-angle-left" aria-hidden="true"></i>
-			</div>
-			<div class="slide--btn-right text-white">
-				<i class="fa fa-angle-right" aria-hidden="true"></i>
-			</div>
+
 			<div class="slide--footer intro feature">
 				<div class="feature--item feature--small bg--light-blue wow animated bounceInUp">
-					<div class="feature-logo">
+					<div class="feature-logo" style="border: .1rem solid #1880b6">
 						<span class="feature-icon transform-center">
 							LOGO
 						</span>
@@ -229,7 +228,7 @@
 					</span>
 				</div>
 				<div class="feature--item feature--big bg--light-green wow animated bounceInLeft">
-					<div class="feature-logo">
+					<div class="feature-logo" style="border: .1rem solid #258f6b">
 						<img class="feature-icon--img" src="img/icon/icon_book.jpg" alt="">
 					</div>
 					<span class="feature-text">
@@ -237,7 +236,7 @@
 					</span>
 				</div>
 				<div class="feature--item feature--small bg--light-purple wow animated bounceInDown">
-					<div class="feature-logo">
+					<div class="feature-logo" style="border: .1rem solid #3e4279">
 						<img class="feature-icon--img" src="img/icon/icon_dog.jpg" alt="">
 					</div>
 					<span class="feature-text">
@@ -245,7 +244,7 @@
 					</span>
 				</div>
 				<div class="feature--item feature--small bg--light-brown wow animated bounceInRight">
-					<div class="feature-logo">
+					<div class="feature-logo" style="border: .1rem solid #98713c">
 						<img class="feature-icon--img" src="img/icon/icon_man.jpg" alt="">
 					</div>
 					<span class="feature-text">
@@ -261,63 +260,45 @@
 			<img src="img/bg/bg_map_px.jpg" alt="">
 		</div>
 		<div class="advantage__container">
-			<div class="advantage--content">
-				<span class="c--light-blue font-weight-bold">ADVANTAGE</span>
-				<h2 class="font-weight-bold mb-5">強み</h2>
-				<h3 class=" wow animated bounceInUp">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</h3>
+			<div class="advantage--content container">
+				<span class="c--light-blue font-weight-bold font-oswald">ADVANTAGE</span>
+				<h2 class="font-weight-bold">強み</h2>
+				<p class=" wow animated bounceInUp">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 			</div>
-			<div class="comment">
+			<div class="comment container">
 				<div class="comment--item wow animated bounceInLeft">
-					<span class="comment--title">
-						取引社数
-					</span>
+					<span class="comment--title">取引社数</span>
 					<p class="comment--value">
-						<span class="font--big">0,000
-						</span>
-						<span class="font--small">
-							社
-						</span>
-					</p>
-					<span class="comment--description">
-						この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-					</span>
-				</div>
-				<div class="comment--item wow animated bounceInUp">
-					<span class="comment--title">
-						取扱言語
-					</span>
-					<p class="comment--value">
-						<span class="font--big">00
-						</span>
-						<span class="font--small">ケ国語
-						</span>
-					</p>
-					<span class="comment--description">
-						この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
-					</span>
-				</div>
-				<div class="comment--item wow animated bounceInDown">
-					<span class="comment--title">
-						翻訳会社売上
-					</span>
-					<p class="comment--value">
-						<span class="font--small">国内
-						</span>
-						<span class="font--big">00
-						</span>
-						<span class="font--small">位
-						</span>
+						<span class="font--big odometer font-oswald" data-value="1234">0,000</span>
+						<span class="font--small">社</span>
 					</p>
 					<span class="comment--description">
 						この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 					</span>
 				</div>
 				<div class="comment--item wow animated bounceInRight">
-					<span class="comment--title">
-						顧客満足度
-					</span>
+					<span class="comment--title">取扱言語</span>
 					<p class="comment--value">
-						<span class="font--big">00%</span>
+						<span class="font--big odometer font-oswald" data-value="258">00</span>
+						<span class="font--small">ケ国語</span>
+					</p>
+					<span class="comment--description">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</span>
+				</div>
+				<div class="comment--item wow animated bounceInLeft">
+					<span class="comment--title">翻訳会社売上</span>
+					<p class="comment--value">
+						<span class="font--small  ">国内</span>
+						<span class="font--big odometer font-oswald" data-value="8123">00</span>
+						<span class="font--small">位</span>
+					</p>
+					<span class="comment--description">
+						この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+					</span>
+				</div>
+				<div class="comment--item wow animated bounceInRight">
+					<span class="comment--title">顧客満足度</span>
+					<p class="comment--value">
+						<span class="font--big odometer font-oswald" data-value="4567">00</span>
 						<span class="font--small">以上
 						</span>
 					</p>
@@ -325,15 +306,11 @@
 						この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
 					</span>
 				</div>
-				<div class="comment--item wow animated bounceInUp">
-					<span class="comment--title">
-						専門分野
-					</span>
+				<div class="comment--item wow animated bounceInLeft">
+					<span class="comment--title">専門分野</span>
 					<p class="comment--value">
-						<span class="font--big">00
-						</span>
-						<span class="font--small">種類以上
-						</span>
+						<span class="font--big odometer font-oswald" data-value="6945">00</span>
+						<span class="font--small">種類以上</span>
 					</p>
 					<span class="comment--description">
 						この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
@@ -425,7 +402,7 @@
 						<div class="transform-center z-index--1 text-center">
 							<h6 class="font-weight-bold mb-0">世界</h6>
 							<p class="comment--value mb-0">
-								<span class="font--big">00
+								<span class="font--big odometer"  data-value="1245">
 								</span>
 								<span class="font--small">ケ国語
 								</span>
@@ -444,8 +421,8 @@
 			<h2 class="font-weight-bold wow animated bounceInRight">取引先企業</h2>
 		</div>
 		
-		<div class="slide--logo my-3 py-4">
-			<div class="slide--container d-flex mx-auto">
+		<div class="container my-3 py-4">
+			<div class=" slide--logo">
 				<div class="slide--logo-item">
 				
 				</div>
@@ -461,13 +438,9 @@
 				<div class="slide--logo-item">
 					
 				</div>
-			</div>
-			
-			<div class="slide--btn-left text-black">
-				<i class="fa fa-angle-left" aria-hidden="true"></i>
-			</div>
-			<div class="slide--btn-right text-black">
-				<i class="fa fa-angle-right" aria-hidden="true"></i>
+				<div class="slide--logo-item">
+					
+				</div>
 			</div>
 		</div>
 	</section>
@@ -680,16 +653,18 @@
 		</div>
 		<div class="end-line"></div>
 	</section>
-	<a class="to-top animated bounceInUp">
+	<a class="to-top animated bounceInUp" href="#top">
 		<i class="fa fa-angle-up" aria-hidden="true"></i>
 	</a>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.js"></script>
+	<!-- <script src="js/odometer.min.js"></script> -->
 	<script src="js/js.js"/></script>
 	<script src="js/wow.min.js"></script>
-	<script>
+	<!-- <script>
 		new WOW().init();
-	</script>
+	</script> -->
 </body>
 </html>
