@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 		if(curPos > 600){
 			//open
 			$('.to-top').css({
-				display: 'block'
+				display: 'flex'
 			});
 		}
 		else{
