@@ -27,6 +27,28 @@ jQuery(document).ready(function($) {
 			});
 			
 		}
+		$('.odometer').each(function(index, el) {
+			var odoValue = $(this).attr('data-value');
+			$(this).html(odoValue);
+		});
+		// var oo = $('#odometer--1');
+		// var o2 = $('#odometer--2');
+
+ 	// 	var e1l = document.querySelector('.odometer--2');
+ 	// 	setTimeout(function(){
+ 	// 		console.log("asd");
+		//     $('.odometer--2').html('1234');
+		//     }, 0);
+
+ 	// 	var el = document.querySelector('.odometer');
+ 	// 		od = new Odometer({
+		// 	  el: el,
+		// 	  theme: 'digital'
+		// 	});
+			 
+		// 	//od.update(555);
+		// 	var el_val = el.attr('data-value');
+		// 	el.innerHTML = el_val;
 	};
 
 	var subMenuIsOpen = -1;//isClose
@@ -37,16 +59,16 @@ jQuery(document).ready(function($) {
 		var subMenu = $('.sub-menu--header');
 		if(subMenuIsOpen == -1){
 			//isOpen
-			
 			var headMenuHeight = $('.head-menu').innerHeight();
-			if($(window).width() > 768 && curPos == 0){
+			if(curPos == 0){
 				subMenu.css({
-					'margin-top': '5rem'
+					'margin-top': '80px'
 				});
 			}
 			$(this).addClass('open');
 			subMenu.css({
-				height: 'calc(100vh - '+headMenuHeight+'px)'
+				height: 'calc(100vh - '+headMenuHeight+'px)',
+				'margin-top': '80px'
 			}).addClass('d-block').removeClass(aniOut).addClass(aniIn).delay(delayTime).queue(function(next){
 				subMenuIsOpen = 0;
 				next();
@@ -89,14 +111,6 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	var _index = 1;
-	var slideItem = $('.slide--item');
-	var _slideRecall;
-	
-	var buttonLeft = $('.slide--btn-left');
-	var buttonRight = $('.slide--btn-right');
-
-
   	$('.sliding').slick({
   		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -104,70 +118,20 @@ jQuery(document).ready(function($) {
 		autoplaySpeed: 2000,
 	});
 	var _logoSlideItemCount = 5;
-	if($(window).width()<764) {
-		_logoSlideItemCount = 2;
+	if($(window).width()<=768) {
+		_logoSlideItemCount = 3;
 	}
   	$('.slide--logo').slick({
-		//slidesToShow: 
 		slidesToShow: _logoSlideItemCount,
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2000,
 	});
-	// recallSlide(_index);
-	// function recallSlide(ind) {
-	// 	if(ind > slideItem.length){
-	// 		_index = 1;
-	// 	}
-	// 	if(ind < slideItem.length){
-	// 		_index = slideItem.length;
-	// 	}
-	//     // for (var i = 1; i <= slideItem.length; i++) { 
-	//     //     if($('.slide--item:nth-child('+i+')').hasClass('active'))
-	//     //     	{
-	//     //     		$('.slide--item:nth-child('+i+')').addClass('slideOutLeft').delay(delayTime*.5).queue(function(next){
-	// 				// 	$(this).removeClass('active').removeClass('slideOutLeft');
-	// 				// 	var _i = ++_index;
-	//     //     			if(_i > slideItem.length)
-	//     //     			{
-	//     //     				_index = 1;
-	//     //     				_i = 1;
-	//     //     			}
-	// 	   //      		if(_i <= slideItem.length){
-	// 	   //      			$('.slide--item:nth-child('+_index+')').addClass('active').addClass('slideInRight').delay(delayTime).queue(function(next){
-	// 	   //      				$(this).removeClass('slideInRight');
-	// 	   //      				next();
-	// 	   //      			});
-	// 	   //      		}
-	// 	   //      			next();
-	// 	   //      	});
-	//     //     	break;
-	//     //     }
-	//     // }
 
-	//     for(var i = 1; i <= slideItem.length; i++)
-	//     {	
-	//     	if(i == _index){
-	//     		$('.slide--item:nth-child('+i+')').addClass('slideOutLeft').delay(delayTime*.5).queue(function(next){
-	// 					$(this).removeClass('active').removeClass('slideOutLeft');
-	// 					var _i = ++_index;
-	//         			if(_i > slideItem.length)
-	//         			{
-	//         				_index = 1;
-	//         				_i = 1;
-	//         			}
-	// 	        		if(_i <= slideItem.length){
-	// 	        			$('.slide--item:nth-child('+_index+')').addClass('active').addClass('slideInRight').delay(delayTime).queue(function(next){
-	// 	        				$(this).removeClass('slideInRight');
-	// 	        				next();
-	// 	        			});
-	// 	        		}
-	// 	        		next();
-	// 	        	});
-	//         	break;
-	//     	}
-
-	//     }
-	//     slideRecall = setTimeout(recallSlide, 4000);
-	// }
+	$('.to-top').click(function(event) {
+		/* Act on the event */
+		$('html, body').animate({
+	        scrollTop: $($.attr(this, 'href')).offset().top
+	    }, 1000, 'swing');
+	});
 });
