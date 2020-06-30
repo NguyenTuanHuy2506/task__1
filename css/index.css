@@ -254,6 +254,9 @@ body {
   margin: 1rem;
   position: relative;
 }
+.menu-item ul {
+  padding: 0;
+}
 .menu-item .menu-item__logo {
   width: 5rem;
   height: 5rem;
@@ -305,15 +308,16 @@ body {
   box-shadow: 0 0 20px 2px white;
 }
 
-.menu-list,
-.menu-list-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.menu-list {
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+}
+
+.menu-list.active, .menu-list-area.active {
+  display: flex;
 }
 
 .btn-menu-link {
@@ -322,7 +326,7 @@ body {
   border: none;
   text-align: center;
   padding: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 14px;
   background-color: white;
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -347,10 +351,10 @@ body {
 .slide--logo {
   width: 100%;
   max-height: 70px;
-  padding: 0px 60px;
+  padding: 0px 40px;
 }
 .slide--logo-item {
-  width: 150px !important;
+  width: 150px;
   height: 54px !important;
   margin: 10px 20px;
   position: relative;
@@ -439,12 +443,14 @@ body {
 }
 
 .heading {
+  display: block;
   font-size: 60px;
   font-weight: bold;
   letter-spacing: 4px;
 }
 
 .sub-heading {
+  display: block;
   font-size: 24px;
   letter-spacing: 3px;
 }
@@ -553,7 +559,6 @@ body {
 }
 
 .advantage {
-  min-height: 70vh;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -629,27 +634,23 @@ body {
   background: linear-gradient(to top left, white, white, transparent);
 }
 
-.comment--title,
-.comment--value,
-.comment--description {
-  display: block;
-}
-
 .comment--title {
   font-size: 1.2rem;
   font-weight: bold;
   color: #1880b6;
+  position: relative;
 }
 
 .comment--title::after {
   content: "";
-  width: 80%;
+  width: 100%;
   height: 10px;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: -10px;
+  left: 0;
+  top: 20px;
+  position: absolute;
   background-color: #ddecf4;
+  z-index: -1;
 }
 
 .comment--value {
@@ -698,7 +699,6 @@ body {
 
 .grid--box {
   width: 100%;
-  min-height: 50vh;
   margin: 10px 0;
 }
 
@@ -857,6 +857,7 @@ body {
 .end-page {
   width: 100%;
   height: 4rem;
+  margin-top: 10px;
   background-color: #1880b6;
   line-height: 4rem;
 }
@@ -942,8 +943,8 @@ body {
   background-color: #07a5ae;
   position: fixed;
   color: white !important;
-  bottom: 40px;
-  right: 40px;
+  bottom: 5%;
+  right: 5%;
   display: none;
   justify-content: space-around;
   align-items: center;
@@ -962,6 +963,27 @@ body {
   cursor: pointer;
   -webkit-box-shadow: 0 0 20px 2px black;
   box-shadow: 0 0 20px 2px black;
+}
+
+.slick-slide > div {
+  margin: 2px 20px;
+}
+
+.btn--back {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  font-size: 30px;
+  padding: 0 5px;
+  border: 1px solid white;
+  color: white !important;
+  transition: all 0.2s ease;
+  transform: translateY(-100%);
+}
+
+.btn--back:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /*# sourceMappingURL=index.css.map */
