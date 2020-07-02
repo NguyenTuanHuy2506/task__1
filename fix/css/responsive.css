@@ -90,6 +90,9 @@
   .grid-area .grid--container .grid--left {
     width: 100%;
   }
+  .grid-area .grid--reverse {
+    text-align: right;
+  }
 
   .grid--container .grid--right,
 .grid--container .grid--left {
@@ -105,13 +108,13 @@
   }
 
   .total-solution {
-    padding: 20px 0;
+    padding: 15px 0;
   }
   .total-solution .grid--box {
     height: auto;
   }
   .total-solution .solution-container {
-    padding: 20px;
+    padding: 50px;
   }
   .total-solution .solution-img {
     padding: 0 0 20px 0;
@@ -260,7 +263,7 @@
   .sliding .slide--btn-left, .sliding .slide--btn-right {
     display: none !important;
   }
-  .sliding .slide--content h1 {
+  .sliding .slide--content h2 {
     font-size: 16px;
   }
   .sliding .slide--content .heading {
@@ -333,7 +336,7 @@
   }
 
   .font--small, .text-description--solution {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .solution-img {
@@ -343,10 +346,9 @@
     width: 100%;
   }
 
-  .grid--box .grid--container {
-    min-height: 400px !important;
+  .infomation .info__list {
+    display: none;
   }
-
   .infomation .info__num--container {
     padding: 15px 10px;
   }
