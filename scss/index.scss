@@ -713,11 +713,6 @@ body {
     }
 }
 
-.comment--title,
-.comment--value,
-.comment--description {
-}
-
 .comment--title {
     font-size: 1.2rem;
     font-weight: bold;
@@ -742,11 +737,14 @@ body {
     color: $lightBlue;
     margin-bottom: 1rem;
     margin-top: 10px;
+    .font--big{
+        vertical-align: baseline;
+    }
 }
 
 .comment--description {
     text-align: left;
-    font-size: .8rem;
+    font-size: 14px;
 }
 
 .btn--rectangle {
@@ -813,10 +811,7 @@ body {
     .grid--left,
     .grid--right {
         width: 50%;
-        
         position: relative;
-        overflow: hidden;
-
         img {
             height: 100%;
             width: 100%;

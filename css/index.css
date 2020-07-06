@@ -672,10 +672,13 @@ body {
   margin-bottom: 1rem;
   margin-top: 10px;
 }
+.comment--value .font--big {
+  vertical-align: baseline;
+}
 
 .comment--description {
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 14px;
 }
 
 .btn--rectangle {
@@ -737,7 +740,6 @@ body {
 .grid--container .grid--right {
   width: 50%;
   position: relative;
-  overflow: hidden;
 }
 .grid--container .grid--left img,
 .grid--container .grid--right img {
