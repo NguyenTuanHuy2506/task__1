@@ -1,4 +1,8 @@
+.container {
+        padding: 0;
+    }
 @media only screen and (max-width: 1024px) {
+
     .comment {
         width: 100%;
         &--item{
@@ -52,9 +56,10 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .container {
-        max-width: 1180px;
+    h1{
+        font-size: 30px;
     }
+
     .slide--container{
         .slide--notice{
             display: none;
@@ -77,9 +82,15 @@
             transform: none;
             position: relative;
             left: 0;
+            margin-bottom: 30px;
+            .btn--rectangle{
+                width: 280px;
+            }
         }
     }
-
+    .btn--rectangle{
+        width: 100%;
+    }
     .comment {
         height: auto;
         -webkit-box-orient: vertical;
@@ -94,17 +105,23 @@
         }
     }
     .grid-area{
+        .grid--box{
+            padding: 20px;
+        }
         .grid--container{
-            .grid--right{
-                display: none;
-            }
+            flex-direction: column;
+            .grid--right,
             .grid--left{
                 width: 100%;
+            }
+            .grid--right{
+                img{
+                    object-fit: unset;
+                }
             }
         }
     }
     .grid--container {
-
         .grid--right,
         .grid--left {
             padding: 10px;
@@ -112,11 +129,11 @@
     }
 
     .transform-middle {
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+        position: unset;
+        top: 0;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
     }
 
     .total-solution {
@@ -162,10 +179,6 @@
 
     .heading {
         font-size: 35px;
-    }
-
-    h2 {
-        font-size: 25px;
     }
 
     .menu-list-area {
@@ -217,11 +230,40 @@
     .sub-heading {
         font-size: 18px;
     }
+    .sub-intro, .sub-news, .infomation{
+        padding: 0 20px;
+    }
+    .sub-news{
+        height: auto;
+        line-height: 2;
+        .container{
+            flex-direction: column;
+            p{
+                margin-bottom: 0;
+            }
+            .text-hidden-50{
+                white-space: unset;
+                width: 100%;
+            }
+        }
+    }
+    .sub-new--2{
+        height: auto;
+        line-height: 2;
+        padding: 0 20px;
+        .d-flex{
+            flex-direction: column;
+
+        }
+    }
+    .sub-new--2 + div{
+        padding: 0 20px;
+    }
 }
 
 @media only screen and (max-width: 600px){
-    h1{
-        font-size: 30px;
+    h2 {
+        font-size: 25px;
     }
     .head-menu{
         padding: .5rem;
@@ -320,14 +362,6 @@
             width: 100%;
             margin-bottom: 5px;
         }
-    }
-    .sub-news{
-        p{
-            display: none;
-        }
-    }
-    .sub-news.wow{
-        display: none;
     }
     .feature{
          flex-wrap: wrap;

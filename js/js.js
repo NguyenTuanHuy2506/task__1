@@ -2,15 +2,29 @@ jQuery(document).ready(function($) {
     var prevPos = 0;
     var curPos = window.pageYOffset;
     var showToTop = -1;
+    var headMenuHeight = $('.head-menu').innerHeight();
+    var headMenuOfftop = $('.head-menu').offset().top;
+
     window.onscroll = function() {
         curPos = window.pageYOffset;
 
         var menu = $('.head-menu');
         if (prevPos < curPos) {
+            var _w = $(window).width();
+                if (_w > 768) {
+                    menu.css({
+                        width: 'calc(100% - 40px)'
+                    });
+                }
             menu.addClass('fixed-top');
         } else if (curPos == 0) {
             menu.removeClass('fixed-top');
+            menu.css({
+                        width: 'calc(100%)'
+                    });
+    
         }
+
         if (curPos > 600) {
             //open
             $('.to-top').css({
@@ -22,30 +36,11 @@ jQuery(document).ready(function($) {
             $('.to-top').css({
                 display: 'none'
             });
-
         }
         $('.odometer').each(function(index, el) {
             var odoValue = $(this).attr('data-value');
             $(this).html(odoValue);
         });
-        // var oo = $('#odometer--1');
-        // var o2 = $('#odometer--2');
-
-        // 	var e1l = document.querySelector('.odometer--2');
-        // 	setTimeout(function(){
-        // 		console.log("asd");
-        //     $('.odometer--2').html('1234');
-        //     }, 0);
-
-        // 	var el = document.querySelector('.odometer');
-        // 		od = new Odometer({
-        // 	  el: el,
-        // 	  theme: 'digital'
-        // 	});
-
-        // 	//od.update(555);
-        // 	var el_val = el.attr('data-value');
-        // 	el.innerHTML = el_val;
     };
 
     var subMenuIsOpen = -1; //isClose
@@ -56,7 +51,7 @@ jQuery(document).ready(function($) {
         var subMenu = $('.sub-menu--header');
         if (subMenuIsOpen == -1) {
             //isOpen
-            var headMenuHeight = $('.head-menu').innerHeight();
+            
             if (curPos == 0) {
                 subMenu.css({
                     'margin-top': '80px'

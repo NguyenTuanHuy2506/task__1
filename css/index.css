@@ -49,7 +49,7 @@ body {
 }
 
 .font-oswald {
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", sans-serif !important;
   letter-spacing: 4px;
 }
 
@@ -144,6 +144,7 @@ body {
 
 .menu {
   /*position: relative;*/
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,6 +301,7 @@ body {
 }
 .menu-item .menu--link:hover {
   background: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
 }
 
 .menu-item__logo:hover,
@@ -380,6 +382,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 100%;
   height: 80px;
   min-height: 5rem;
@@ -607,7 +611,7 @@ body {
 }
 
 .comment {
-  margin: 0rem auto;
+  margin: 30px auto 20px auto;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -620,7 +624,7 @@ body {
   width: 208px;
   min-height: 16rem;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 10px 10px 10px;
   border: 0.1rem solid #1880b6;
   background-color: white;
   position: relative;
@@ -723,10 +727,15 @@ body {
   -ms-flex-direction: row;
   flex-direction: row;
 }
+.grid--container .grid--left {
+  padding: 60px 20px 60px 0px;
+}
+.grid--container .grid--right {
+  padding: 60px 0 60px 20px;
+}
 .grid--container .grid--left,
 .grid--container .grid--right {
   width: 50%;
-  padding: 60px 0 60px 40px;
   position: relative;
   overflow: hidden;
 }
@@ -742,6 +751,12 @@ body {
   -webkit-box-direction: reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
+}
+.grid--reverse .grid--left {
+  padding: 60px 0 60px 20px;
+}
+.grid--reverse .grid--right {
+  padding: 60px 20px 60px 0;
 }
 
 .text-hidden-50 {
@@ -797,6 +812,17 @@ body {
   letter-spacing: 1px;
 }
 
+.sub-new--2 {
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  line-height: 60px;
+}
+.sub-new--2 span {
+  margin-right: 30px;
+}
+
 .hambuger-btn-ver2 {
   display: flex;
   align-items: center;
@@ -828,6 +854,10 @@ body {
   color: #1880b6;
 }
 
+.hambuger-btn-ver2:hover {
+  text-decoration: none;
+}
+
 .tag-name {
   border: none;
   background-color: #1880b6;
@@ -835,6 +865,13 @@ body {
   font-weight: bold;
   padding: 10px;
   font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.tag-name-env:hover {
+  text-decoration: none;
+  color: white;
+  transform: translateX(15px);
 }
 
 .tag-days {
@@ -930,6 +967,17 @@ body {
 .info--more-item li {
   font-size: 14px;
   padding: 5px 0;
+  transition: all 0.3s ease;
+}
+.info--more-item li:hover {
+  background-color: #ccc;
+}
+.info--more-item li > a {
+  color: black;
+}
+.info--more-item li:hover > a {
+  opacity: 0.8;
+  text-decoration: none;
 }
 .info--more-item li::before {
   content: "-";

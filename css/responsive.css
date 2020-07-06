@@ -1,3 +1,7 @@
+.container {
+  padding: 0;
+}
+
 @media only screen and (max-width: 1024px) {
   .comment {
     width: 100%;
@@ -44,8 +48,8 @@
   }
 }
 @media only screen and (max-width: 768px) {
-  .container {
-    max-width: 1180px;
+  h1 {
+    font-size: 30px;
   }
 
   .slide--container .slide--notice {
@@ -68,6 +72,14 @@
     transform: none;
     position: relative;
     left: 0;
+    margin-bottom: 30px;
+  }
+  .advantage__container .btn--rectangle {
+    width: 280px;
+  }
+
+  .btn--rectangle {
+    width: 100%;
   }
 
   .comment {
@@ -84,11 +96,18 @@
     min-height: 10rem;
   }
 
-  .grid-area .grid--container .grid--right {
-    display: none;
+  .grid-area .grid--box {
+    padding: 20px;
   }
-  .grid-area .grid--container .grid--left {
+  .grid-area .grid--container {
+    flex-direction: column;
+  }
+  .grid-area .grid--container .grid--right,
+.grid-area .grid--container .grid--left {
     width: 100%;
+  }
+  .grid-area .grid--container .grid--right img {
+    object-fit: unset;
   }
 
   .grid--container .grid--right,
@@ -97,11 +116,11 @@
   }
 
   .transform-middle {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    position: unset;
+    top: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 
   .total-solution {
@@ -142,10 +161,6 @@
 
   .heading {
     font-size: 35px;
-  }
-
-  h2 {
-    font-size: 25px;
   }
 
   .menu-list-area {
@@ -193,10 +208,42 @@
   .sub-heading {
     font-size: 18px;
   }
+
+  .sub-intro, .sub-news, .infomation {
+    padding: 0 20px;
+  }
+
+  .sub-news {
+    height: auto;
+    line-height: 2;
+  }
+  .sub-news .container {
+    flex-direction: column;
+  }
+  .sub-news .container p {
+    margin-bottom: 0;
+  }
+  .sub-news .container .text-hidden-50 {
+    white-space: unset;
+    width: 100%;
+  }
+
+  .sub-new--2 {
+    height: auto;
+    line-height: 2;
+    padding: 0 20px;
+  }
+  .sub-new--2 .d-flex {
+    flex-direction: column;
+  }
+
+  .sub-new--2 + div {
+    padding: 0 20px;
+  }
 }
 @media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 30px;
+  h2 {
+    font-size: 25px;
   }
 
   .head-menu {
@@ -290,14 +337,6 @@
   .sub-intro-item {
     width: 100%;
     margin-bottom: 5px;
-  }
-
-  .sub-news p {
-    display: none;
-  }
-
-  .sub-news.wow {
-    display: none;
   }
 
   .feature {
